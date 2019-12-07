@@ -8,28 +8,28 @@ local rofi_command = 'env /usr/bin/rofi -dpi ' .. get_dpi() .. ' -width ' .. wit
 return {
   -- List of apps to start by default on some actions
   default = {
-    terminal = 'terminator',
+    terminal = 'tilix',
     rofi = rofi_command,
     lock = 'i3lock-fancy',
-    quake = 'terminator',
+    quake = 'tilix',
     screenshot = '~/.config/awesome/configuration/utils/screenshot -m',
     region_screenshot = '~/.config/awesome/configuration/utils/screenshot -r',
     delayed_screenshot = 'sleep 10 ; ~/.config/awesome/configuration/utils/screenshot -r',
     
     -- Editing these also edits the default program
     -- associated with each tag/workspace
-    browser = 'vivaldi-stable',
-    editor = 'gedit', -- gui text editor
-    social = 'discord',
-    game = rofi_command,
+    browser = 'firefox',
+    editor = 'code', -- gui text editor
+    -- social = 'discord',
+    game = steam,
     files = 'nautilus -w',
-    music = rofi_command
+    -- music = rofi_command
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
     'nm-applet --indicator', -- wifi
-    --'blueberry-tray', -- Bluetooth tray icon
+    'blueberry-tray', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
     'ibus-daemon --xim', -- Ibus daemon for keyboard
     'scream -u -p 4011 -i virbr1', -- scream audio sink
@@ -37,10 +37,10 @@ return {
     '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     --KDE '/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     -- MATE'/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
-     'flameshot',
-     'synology-drive -minimized',
-     'steam -silent',
-     'discord',
+    --  'flameshot',
+    --  'synology-drive -minimized',
+    --  'steam -silent',
+    --  'discord',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
