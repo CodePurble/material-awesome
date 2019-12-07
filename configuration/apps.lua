@@ -19,7 +19,7 @@ return {
     -- Editing these also edits the default program
     -- associated with each tag/workspace
     browser = 'firefox',
-    editor = 'code .', -- gui text editor
+    editor = 'code', -- gui text editor
     -- social = 'discord',
     game = 'steam',
     files = 'nautilus -w',
