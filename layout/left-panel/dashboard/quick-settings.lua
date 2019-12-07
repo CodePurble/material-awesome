@@ -4,7 +4,7 @@ local mat_list_item = require('widget.material.list-item')
 return wibox.widget {
   wibox.widget {
     wibox.widget {
-      text = 'Quick settings',
+      text = 'Quick Settings',
       font = 'Roboto medium 12',
       widget = wibox.widget.textbox
     },
