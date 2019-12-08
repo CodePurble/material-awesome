@@ -28,13 +28,13 @@ return {
   -- List of apps to start once on start-up
   run_on_start_up = {
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
-    'nm-applet --indicator', -- wifi
+    'nm-applet', -- wifi
     'blueberry-tray', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
     'ibus-daemon --xim', -- Ibus daemon for keyboard
     'scream -u -p 4011 -i virbr1', -- scream audio sink
     'numlockx on', -- enable numlock
-    '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
+    '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager GNOME
     --KDE '/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     -- MATE'/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     --  'flameshot',
@@ -43,6 +43,6 @@ return {
     --  'discord',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
-    '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
+    -- '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
   }
 }

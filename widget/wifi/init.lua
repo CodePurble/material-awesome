@@ -44,6 +44,7 @@ widget_button:buttons(
       nil,
       function()
         awful.spawn('wicd-client -n')
+        -- awful.spawn('nmtui')
       end
     )
   )
@@ -72,7 +73,8 @@ local function grabText()
     awful.spawn.easy_async(
       'iw dev ' .. interface .. ' link',
       function(stdout)
-        essid = stdout:match('SSID:(.-)\n')
+        -- essid = stdout:match('ESSID:(.-)\n')
+        essid = os.capture("iwgetid -r", false)
         if (essid == nil) then
           essid = 'N/A'
         end

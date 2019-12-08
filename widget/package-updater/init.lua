@@ -78,7 +78,7 @@ local function show_battery_warning()
   naughty.notify {
     icon = PATH_TO_ICONS .. 'battery-alert.svg',
     icon_size = dpi(48),
-    text = 'Huston, we have a problem',
+    text = 'Houston, we have a problem',
     title = 'Battery is dying',
     timeout = 5,
     hover_timeout = 0.5,
