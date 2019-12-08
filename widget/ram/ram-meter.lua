@@ -13,7 +13,7 @@ local slider =
 }
 
 watch(
-  'bash -c "free | grep -z Mem.*Swap.*"',
+  'bash -c "free -h | grep -z Mem.*Swap.*"',
   1,
   function(_, stdout)
     local total, used, free, shared, buff_cache, available, total_swap, used_swap, free_swap =

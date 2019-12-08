@@ -84,7 +84,7 @@ return function(screen, panel, action_bar_width)
       -- Create a taglist widget
       TagList(screen)
     },
-    --s.mytasklist, -- Middle widget
+    -- s.mytasklist -- Middle widget
     nil,
     {
       -- Right widgets
@@ -93,7 +93,7 @@ return function(screen, panel, action_bar_width)
       require('widget.package-updater'),
       require('widget.battery'),
       -- Clock
-      --clock_widget
+      -- clock_widget
     }
   }
 end
