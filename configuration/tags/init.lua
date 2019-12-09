@@ -11,8 +11,8 @@ local tags = {
     screen = 1
   },
   {
-    icon = icons.chrome,
-    type = 'chrome',
+    icon = icons.firefox,
+    type = 'firefox',
     defaultApp = apps.default.browser,
     screen = 1
   },
