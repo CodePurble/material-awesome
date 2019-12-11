@@ -5,15 +5,21 @@ local apps = require('configuration.apps')
 
 local tags = {
   {
-    icon = icons.code,
-    type = 'code',
-    defaultApp = apps.default.editor,
-    screen = 1
-  },
-  {
     icon = icons.firefox,
     type = 'firefox',
     defaultApp = apps.default.browser,
+    screen = 1
+  },
+  {
+    icon = icons.folder,
+    type = 'files',
+    defaultApp = apps.default.files,
+    screen = 1
+  },
+  {
+    icon = icons.code,
+    type = 'code',
+    defaultApp = apps.default.editor,
     screen = 1
   },
   {
@@ -26,12 +32,6 @@ local tags = {
     icon = icons.star,
     type = 'game',
     defaultApp = apps.default.game,
-    screen = 1
-  },
-  {
-    icon = icons.folder,
-    type = 'files',
-    defaultApp = apps.default.files,
     screen = 1
   },
   -- {
