@@ -4,6 +4,7 @@ return {
   --tags
   chrome = dir .. '/google-chrome.svg',
   firefox = dir .. '/icons8-firefox.svg',
+  star = dir .. '/icons8-rating.svg',
   code = dir .. '/code-braces.svg',
   social = dir .. '/forum.svg',
   folder = dir .. '/folder.svg',

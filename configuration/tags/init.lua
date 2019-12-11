@@ -16,14 +16,14 @@ local tags = {
     defaultApp = apps.default.browser,
     screen = 1
   },
-  -- {
-  --   icon = icons.social,
-  --   type = 'social',
-  --   defaultApp = apps.default.social,
-  --   screen = 1
-  -- },
   {
-    icon = icons.game,
+    icon = icons.social,
+    type = 'social',
+    defaultApp = apps.default.social,
+    screen = 1
+  },
+  {
+    icon = icons.star,
     type = 'game',
     defaultApp = apps.default.game,
     screen = 1

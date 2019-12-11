@@ -20,8 +20,8 @@ return {
     -- associated with each tag/workspace
     browser = 'firefox',
     editor = 'code', -- gui text editor
-    -- social = 'discord',
-    game = 'steam',
+    social = 'franz',
+    -- game = 'steam',
     files = 'nautilus -w',
     -- music = rofi_command
   },
