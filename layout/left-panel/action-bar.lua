@@ -9,22 +9,27 @@ local TagList = require('widget.tag-list')
 local clickable_container = require('widget.material.clickable-container')
 
 local batteryarc_widget = require('widget.batteryarc-widget.batteryarc')
+local calendar_widget = require("widget.calendar-widget.calendar")
 
 return function(screen, panel, action_bar_width)
   -- Clock / Calendar 24h format
-  local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 11">%H\n%M</span>')
-
+  local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 12">%H\n%M</span>')
+    textclock:connect_signal("button::press",
+	function(_, _, _, button)
+	    if button == 1 then calendar_widget.toggle() end
+	end)
   -- Clock / Calendar 12AM/PM fornat
   -- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 11">%I\n%M</span>\n<span font="Roboto Mono bold 9">%p</span>')
   -- textclock.forced_height = 56
 
   -- Add a calendar (credits to kylekewley for the original code)
-  local month_calendar = awful.widget.calendar_popup.month({
-    screen = s,
-    start_sunday = false,
-    week_numbers = true
-  })
-  month_calendar:attach(textclock)
+--  local month_calendar = awful.widget.calendar_popup.month({
+--    calendar_placement = 'bottom_right',
+--    screen = s,
+ --   start_sunday = true,
+  --  week_numbers = false
+-- })
+-- month_calendar:attach(textclock)
 
   local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(8), dpi(8))
   local systray = wibox.widget.systray()
@@ -90,10 +95,11 @@ return function(screen, panel, action_bar_width)
     nil,
     {
       -- Right widgets
-      layout = wibox.layout.align.vertical,
+      layout = wibox.layout.fixed.vertical,
       batteryarc_widget({show_current_level = true}),
       wibox.container.margin(systray, dpi(10), dpi(10)),
       require('widget.package-updater'),
+      clock_widget,
       -- Clock
       -- clock_widget
     }
