@@ -8,6 +8,8 @@ local icons = require('theme.icons')
 local TagList = require('widget.tag-list')
 local clickable_container = require('widget.material.clickable-container')
 
+local batteryarc_widget = require('widget.batteryarc-widget.batteryarc')
+
 return function(screen, panel, action_bar_width)
   -- Clock / Calendar 24h format
   local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 11">%H\n%M</span>')
@@ -88,10 +90,10 @@ return function(screen, panel, action_bar_width)
     nil,
     {
       -- Right widgets
-      layout = wibox.layout.fixed.vertical,
+      layout = wibox.layout.align.vertical,
+      batteryarc_widget({show_current_level = true}),
       wibox.container.margin(systray, dpi(10), dpi(10)),
       require('widget.package-updater'),
-      require('widget.battery'),
       -- Clock
       -- clock_widget
     }

@@ -94,8 +94,7 @@ local left_panel = function(screen)
   )
 
   panel:setup {
-    layout = wibox.layout.align.horizontal,
-    nil,
+    layout = wibox.layout.align.horizontal(right),
     {
       id = 'panel_content',
       bg = beautiful.background.hue_900,
