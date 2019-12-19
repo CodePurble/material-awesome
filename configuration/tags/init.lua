@@ -11,15 +11,15 @@ local tags = {
     screen = 1
   },
   {
-    icon = icons.folder,
-    type = 'files',
-    defaultApp = apps.default.files,
-    screen = 1
-  },
-  {
     icon = icons.code,
     type = 'code',
     defaultApp = apps.default.editor,
+    screen = 1
+  },
+  {
+    icon = icons.folder,
+    type = 'files',
+    defaultApp = apps.default.files,
     screen = 1
   },
   {
