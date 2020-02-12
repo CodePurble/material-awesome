@@ -29,7 +29,7 @@ local tags = {
     screen = 1
   },
   {
-    icon = icons.star,
+    icon = icons.game,
     type = 'game',
     defaultApp = apps.default.game,
     screen = 1
