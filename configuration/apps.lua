@@ -11,10 +11,10 @@ return {
     terminal = 'tilix',
     rofi = rofi_command,
     lock = 'i3lock-fancy',
-    quake = 'tilix --quake',
-    screenshot = '~/.config/awesome/configuration/utils/screenshot -m',
-    region_screenshot = '~/.config/awesome/configuration/utils/screenshot -r',
-    delayed_screenshot = 'sleep 10 ; ~/.config/awesome/configuration/utils/screenshot -r',
+    -- quake = 'tilix --quake',
+    screenshot = '~/.config/awesome/configuration/utils/screenshot',
+    region_screenshot = '~/.config/awesome/configuration/utils/screenshot -a',
+    window_screenshot = '~/.config/awesome/configuration/utils/screenshot -w',
     
     -- Editing these also edits the default program
     -- associated with each tag/workspace
@@ -27,6 +27,7 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
+	'nitrogen --restore',
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
     'nm-applet', -- wifi
     'blueberry-tray', -- Bluetooth tray icon
