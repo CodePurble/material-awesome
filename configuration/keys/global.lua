@@ -85,6 +85,14 @@ local globalKeys =
     {description = 'Lock the screen', group = 'awesome'}
   ),
   awful.key(
+    {modkey, 'Shift'},
+    'l',
+    function()
+	  awful.spawn.with_shell(apps.default.lock .. ' & systemctl suspend')
+    end,
+    {description = 'Suspend current session', group = 'awesome'}
+  ),
+  awful.key(
     {modkey},
     'Print',
     function()
