@@ -12,10 +12,10 @@ return {
     rofi = rofi_command,
     lock = 'i3lock-fancy',
     -- quake = 'tilix --quake',
-    screenshot = '~/.config/awesome/configuration/utils/screenshot',
-    region_screenshot = '~/.config/awesome/configuration/utils/screenshot -a',
-    window_screenshot = '~/.config/awesome/configuration/utils/screenshot -w',
-    
+    screenshot = "scrot -e 'mv $f ~/Pictures/screenshots/'",
+    region_screenshot = "scrot -s -e 'mv $f ~/Pictures/screenshots/'",
+	window_screenshot = "scrot --focused -e 'mv $f ~/Pictures/screenshots/'",
+
     -- Editing these also edits the default program
     -- associated with each tag/workspace
     browser = 'firefox',

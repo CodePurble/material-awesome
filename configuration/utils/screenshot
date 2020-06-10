@@ -1,2 +1,2 @@
 #!/bin/bash
-gnome-screenshot
+scrot '%Y-%m-%d.jpg' -e 'mv $f ~/shots/'

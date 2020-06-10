@@ -75,7 +75,7 @@ local globalKeys =
     end,
     {description = 'Switch to previous window', group = 'client'}
   ),
-  -- Programms
+  -- Programs
   awful.key(
     {modkey},
     'l',
@@ -88,7 +88,7 @@ local globalKeys =
     {modkey, 'Shift'},
     'l',
     function()
-	  awful.spawn.with_shell(apps.default.lock .. ' & systemctl suspend')
+	  awful.spawn.with_shell(apps.default.lock .. ' && systemctl suspend')
     end,
     {description = 'Suspend current session', group = 'awesome'}
   ),
@@ -98,7 +98,7 @@ local globalKeys =
     function()
       awful.util.spawn_with_shell(apps.default.region_screenshot)
     end,
-    {description = 'Mark an area and screenshot it (clipboard)', group = 'screenshots (clipboard)'}
+    {description = 'Mark an area and screenshot it', group = 'screenshots'}
   ),
   awful.key(
     {},
@@ -106,15 +106,15 @@ local globalKeys =
     function()
       awful.util.spawn_with_shell(apps.default.screenshot)
     end,
-    {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}
+    {description = 'Take a screenshot of your active monitor', group = 'screenshots'}
   ),
   awful.key(
-    {'Control'},
-    'Print',
-    function()
-      awful.util.spawn_with_shell(apps.default.window_screenshot)
-    end,
-    {description = 'Screenshot currently active window to your clipboard', group = 'screenshots (clipboard)'}
+	{'Control'},
+	'Print',
+	function()
+	  awful.util.spawn_with_shell(apps.default.window_screenshot)
+	end,
+	{description = 'Screenshot currently active window', group = 'screenshots'}
   ),
   awful.key(
     {modkey},
